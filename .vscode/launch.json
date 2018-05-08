@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug",
+            "preLaunchTask": "npm: build",
+            "runtimeExecutable": "${workspaceFolder}/scripts/node_2_bunyan.sh",
+            "program": "${workspaceRoot}/src/main.ts",
+            "outFiles": ["${workspaceRoot}/dist/**/*.js"],
+            "sourceMaps": true,
+            "outputCapture": "std",
+            "autoAttachChildProcesses": true
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach by Process ID",
+            "processId": "${command:PickProcess}"
+        }
+    ]
+}
